@@ -1,0 +1,7 @@
+{
+  "code": "EUR",
+  "name": "Euro",
+  "symbol": "€",
+  "symbol_html": "&#8364;",
+  "digits_after_decimal": 2
+}
