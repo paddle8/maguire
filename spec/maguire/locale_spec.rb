@@ -27,5 +27,12 @@ describe Maguire::Locale do
       fr_FR.format(500_000_00, eur).must_equal "500 000,00 €"
       fr_FR.format(500_000_00, usd).must_equal "500 000,00 US$"
     end
+
+    it "handles South Asian formatting" do
+      en_IN = Maguire::Locale.lookup({ lang: "en", country: "IN" })
+      usd = Maguire::Currency.lookup("USD")
+
+      en_IN.format(1_23_45_67_890_12, usd).must_equal "$1,23,45,67,890.12"
+    end
   end
 end

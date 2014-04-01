@@ -1,6 +1,7 @@
 {
   "name": "Dogecoin",
   "code": "DOGE",
+  "symbol": "D",
   "minor_units": 0,
   "countries": []
 }
