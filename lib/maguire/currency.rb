@@ -1,29 +1,32 @@
 require 'json'
+require 'ostruct'
 
 module Maguire
-  class Currency
-    attr_reader :code, :name, :countries
-
+  class Currency < OpenStruct
     def initialize(iso_data={})
-      iso_data.each do |key, value|
-        self.instance_variable_set("@#{key}".to_sym, value)
-      end
+      @data = iso_data
+      super
     end
 
     def precision
-      10 ** @minor_units
+      10 ** minor_units
     end
 
     def inspect
-      "<##{self.class} name=#{@name} code=#{@code}>"
+      "<##{self.class} name=#{name} code=#{code}>"
+    end
+
+    def overlay(locale_data={})
+      Currency.new(self.class.merge_data(@data, locale_data))
     end
 
     class << self
-
-      def clear_cache!; end
+      def clear_cache!
+        @cache = {}
+      end
 
       def lookup(code)
-        code = code.downcase
+        return @cache[code.to_sym] if @cache && @cache[code.to_sym]
 
         data_sets = Maguire.data_paths.map do |data_path|
           path = data_path.join("#{code}.json")
@@ -34,7 +37,7 @@ module Maguire
           end
         end
 
-        Currency.new(merge_data(data_sets))
+        @cache[code.to_sym] = self.new(merge_data(data_sets))
       end
 
       def merge_data(data_sets)

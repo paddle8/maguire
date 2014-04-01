@@ -12,4 +12,10 @@ describe Maguire::Currency do
     currency.code.must_equal "JPY"
     currency.precision.must_equal 1
   end
+
+  it "caches currencies" do
+    currency = Maguire::Currency.lookup("EUR")
+    currency.must_be_same_as Maguire::Currency.lookup("EUR")
+    currency.wont_be_same_as Maguire::Currency.lookup("CAD")
+  end
 end
