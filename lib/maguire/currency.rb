@@ -1,9 +1,8 @@
 require 'json'
-require 'pry'
 
 module Maguire
   class Currency
-    attr_reader :code
+    attr_reader :code, :name, :countries
 
     def initialize(iso_data={})
       iso_data.each do |key, value|
@@ -16,7 +15,7 @@ module Maguire
     end
 
     def inspect
-      "<##{self.class} code=#{@code}>"
+      "<##{self.class} name=#{@name} code=#{@code}>"
     end
 
     class << self
@@ -29,7 +28,7 @@ module Maguire
         data_sets = Maguire.data_paths.map do |data_path|
           path = data_path.join("#{code}.json")
           if File.exists?(path)
-            JSON.load(path, nil, symbolize_names: true)
+            JSON.parse(File.read(path), symbolize_names: true)
           else
             []
           end
