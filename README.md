@@ -1,4 +1,4 @@
-# Maguire
+# Maguire [![Build Status](https://next.travis-ci.org/paddle8/maguire.svg)](https://next.travis-ci.org/paddle8/maguire)
 
 A simple gem that fulfills your need to "show me the money".
 
