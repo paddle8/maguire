@@ -21,7 +21,7 @@ module Maguire
 
     def reset_locale_paths
       locale_paths.clear
-      locale_paths << root_path + 'iso_data'
+      locale_paths << root_path + 'locale'
     end
 
     def format(money, options={})
