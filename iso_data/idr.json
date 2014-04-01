@@ -1,7 +1,7 @@
 {
   "name": "Rupiah",
   "code": "IDR",
-  "number": 360,
+  "number": "360",
   "minor_units": 2,
   "countries": [
     "INDONESIA"

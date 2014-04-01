@@ -1,7 +1,7 @@
 {
   "name": "Barbados Dollar",
   "code": "BBD",
-  "number": 52,
+  "number": "052",
   "minor_units": 2,
   "countries": [
     "BARBADOS"

@@ -1,7 +1,7 @@
 {
   "name": "Belize Dollar",
   "code": "BZD",
-  "number": 84,
+  "number": "084",
   "minor_units": 2,
   "countries": [
     "BELIZE"

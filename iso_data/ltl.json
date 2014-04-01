@@ -1,7 +1,7 @@
 {
   "name": "Lithuanian Litas",
   "code": "LTL",
-  "number": 440,
+  "number": "440",
   "minor_units": 2,
   "countries": [
     "LITHUANIA"

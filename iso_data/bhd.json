@@ -1,7 +1,7 @@
 {
   "name": "Bahraini Dinar",
   "code": "BHD",
-  "number": 48,
+  "number": "048",
   "minor_units": 3,
   "countries": [
     "BAHRAIN"

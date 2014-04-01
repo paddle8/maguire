@@ -1,7 +1,7 @@
 {
   "name": "Pound Sterling",
   "code": "GBP",
-  "number": 826,
+  "number": "826",
   "minor_units": 2,
   "countries": [
     "GUERNSEY",

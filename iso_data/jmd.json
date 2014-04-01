@@ -1,7 +1,7 @@
 {
   "name": "Jamaican Dollar",
   "code": "JMD",
-  "number": 388,
+  "number": "388",
   "minor_units": 2,
   "countries": [
     "JAMAICA"

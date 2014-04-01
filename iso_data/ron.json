@@ -1,7 +1,7 @@
 {
   "name": "New Romanian Leu",
   "code": "RON",
-  "number": 946,
+  "number": "946",
   "minor_units": 2,
   "countries": [
     "ROMANIA"

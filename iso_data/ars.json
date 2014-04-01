@@ -1,7 +1,7 @@
 {
   "name": "Argentine Peso",
   "code": "ARS",
-  "number": 32,
+  "number": "032",
   "minor_units": 2,
   "countries": [
     "ARGENTINA"

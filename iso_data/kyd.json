@@ -1,7 +1,7 @@
 {
   "name": "Cayman Islands Dollar",
   "code": "KYD",
-  "number": 136,
+  "number": "136",
   "minor_units": 2,
   "countries": [
     "CAYMAN ISLANDS"

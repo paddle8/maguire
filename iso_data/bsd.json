@@ -1,7 +1,7 @@
 {
   "name": "Bahamian Dollar",
   "code": "BSD",
-  "number": 44,
+  "number": "044",
   "minor_units": 2,
   "countries": [
     "BAHAMAS"

@@ -1,7 +1,7 @@
 {
   "name": "Hong Kong Dollar",
   "code": "HKD",
-  "number": 344,
+  "number": "344",
   "minor_units": 2,
   "countries": [
     "HONG KONG"

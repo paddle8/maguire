@@ -1,7 +1,7 @@
 {
   "name": "Iceland Krona",
   "code": "ISK",
-  "number": 352,
+  "number": "352",
   "minor_units": 0,
   "countries": [
     "ICELAND"

@@ -1,7 +1,7 @@
 {
   "name": "Liberian Dollar",
   "code": "LRD",
-  "number": 430,
+  "number": "430",
   "minor_units": 2,
   "countries": [
     "LIBERIA"

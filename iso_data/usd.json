@@ -1,7 +1,7 @@
 {
   "name": "US Dollar",
   "code": "USD",
-  "number": 840,
+  "number": "840",
   "minor_units": 2,
   "countries": [
     "AMERICAN SAMOA",

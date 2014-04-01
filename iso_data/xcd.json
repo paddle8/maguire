@@ -1,7 +1,7 @@
 {
   "name": "East Caribbean Dollar",
   "code": "XCD",
-  "number": 951,
+  "number": "951",
   "minor_units": 2,
   "countries": [
     "ANGUILLA",

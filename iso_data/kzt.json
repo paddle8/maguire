@@ -1,7 +1,7 @@
 {
   "name": "Tenge",
   "code": "KZT",
-  "number": 398,
+  "number": "398",
   "minor_units": 2,
   "countries": [
     "KAZAKHSTAN"

@@ -1,7 +1,7 @@
 {
   "name": "Egyptian Pound",
   "code": "EGP",
-  "number": 818,
+  "number": "818",
   "minor_units": 2,
   "countries": [
     "EGYPT"

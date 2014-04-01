@@ -1,7 +1,7 @@
 {
   "name": "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
   "code": "XBB",
-  "number": 956,
+  "number": "956",
   "minor_units": 0,
   "countries": [
     "ZZ02_Bond Markets Unit European_EMU-6"

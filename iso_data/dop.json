@@ -1,7 +1,7 @@
 {
   "name": "Dominican Peso",
   "code": "DOP",
-  "number": 214,
+  "number": "214",
   "minor_units": 2,
   "countries": [
     "DOMINICAN REPUBLIC"

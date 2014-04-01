@@ -1,7 +1,7 @@
 {
   "name": "SDR (Special Drawing Right)",
   "code": "XDR",
-  "number": 960,
+  "number": "960",
   "minor_units": 0,
   "countries": [
     "INTERNATIONAL MONETARY FUND (IMF) "

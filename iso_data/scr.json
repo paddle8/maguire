@@ -1,7 +1,7 @@
 {
   "name": "Seychelles Rupee",
   "code": "SCR",
-  "number": 690,
+  "number": "690",
   "minor_units": 2,
   "countries": [
     "SEYCHELLES"

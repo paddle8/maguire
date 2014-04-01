@@ -1,7 +1,7 @@
 {
   "name": "Solomon Islands Dollar",
   "code": "SBD",
-  "number": 90,
+  "number": "090",
   "minor_units": 2,
   "countries": [
     "SOLOMON ISLANDS"

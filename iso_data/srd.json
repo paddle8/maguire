@@ -1,7 +1,7 @@
 {
   "name": "Surinam Dollar",
   "code": "SRD",
-  "number": 968,
+  "number": "968",
   "minor_units": 2,
   "countries": [
     "SURINAME"

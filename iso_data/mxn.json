@@ -1,7 +1,7 @@
 {
   "name": "Mexican Peso",
   "code": "MXN",
-  "number": 484,
+  "number": "484",
   "minor_units": 2,
   "countries": [
     "MEXICO"

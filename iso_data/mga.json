@@ -1,7 +1,7 @@
 {
   "name": "Malagasy Ariary",
   "code": "MGA",
-  "number": 969,
+  "number": "969",
   "minor_units": 2,
   "countries": [
     "MADAGASCAR"

@@ -1,7 +1,7 @@
 {
   "name": "Canadian Dollar",
   "code": "CAD",
-  "number": 124,
+  "number": "124",
   "minor_units": 2,
   "countries": [
     "CANADA"

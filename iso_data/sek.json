@@ -1,7 +1,7 @@
 {
   "name": "Swedish Krona",
   "code": "SEK",
-  "number": 752,
+  "number": "752",
   "minor_units": 2,
   "countries": [
     "SWEDEN"

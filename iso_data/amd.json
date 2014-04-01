@@ -1,7 +1,7 @@
 {
   "name": "Armenian Dram",
   "code": "AMD",
-  "number": 51,
+  "number": "051",
   "minor_units": 2,
   "countries": [
     "ARMENIA"

@@ -1,7 +1,7 @@
 {
   "name": "CFA Franc BEAC",
   "code": "XAF",
-  "number": 950,
+  "number": "950",
   "minor_units": 0,
   "countries": [
     "CAMEROON",

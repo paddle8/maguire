@@ -1,7 +1,7 @@
 {
   "name": "Norwegian Krone",
   "code": "NOK",
-  "number": 578,
+  "number": "578",
   "minor_units": 2,
   "countries": [
     "BOUVET ISLAND",

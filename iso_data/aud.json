@@ -1,7 +1,7 @@
 {
   "name": "Australian Dollar",
   "code": "AUD",
-  "number": 36,
+  "number": "036",
   "minor_units": 2,
   "countries": [
     "AUSTRALIA",

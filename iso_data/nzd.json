@@ -1,7 +1,7 @@
 {
   "name": "New Zealand Dollar",
   "code": "NZD",
-  "number": 554,
+  "number": "554",
   "minor_units": 2,
   "countries": [
     "COOK ISLANDS",

@@ -1,7 +1,7 @@
 {
   "name": "US Dollar (Next day)",
   "code": "USN",
-  "number": 997,
+  "number": "997",
   "minor_units": 2,
   "countries": [
     "UNITED STATES"

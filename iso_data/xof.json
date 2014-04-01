@@ -1,7 +1,7 @@
 {
   "name": "CFA Franc BCEAO",
   "code": "XOF",
-  "number": 952,
+  "number": "952",
   "minor_units": 0,
   "countries": [
     "BENIN",

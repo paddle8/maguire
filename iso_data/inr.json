@@ -1,7 +1,7 @@
 {
   "name": "Indian Rupee",
   "code": "INR",
-  "number": 356,
+  "number": "356",
   "minor_units": 2,
   "countries": [
     "BHUTAN",

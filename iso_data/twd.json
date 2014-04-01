@@ -1,7 +1,7 @@
 {
   "name": "New Taiwan Dollar",
   "code": "TWD",
-  "number": 901,
+  "number": "901",
   "minor_units": 2,
   "countries": [
     "TAIWAN, PROVINCE OF CHINA"

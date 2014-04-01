@@ -1,7 +1,7 @@
 {
   "name": "Hryvnia",
   "code": "UAH",
-  "number": 980,
+  "number": "980",
   "minor_units": 2,
   "countries": [
     "UKRAINE"

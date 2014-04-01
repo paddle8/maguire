@@ -1,7 +1,7 @@
 {
   "name": "Euro",
   "code": "EUR",
-  "number": 978,
+  "number": "978",
   "minor_units": 2,
   "countries": [
     "ÅLAND ISLANDS",

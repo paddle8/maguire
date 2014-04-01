@@ -1,7 +1,7 @@
 {
   "name": "Moroccan Dirham",
   "code": "MAD",
-  "number": 504,
+  "number": "504",
   "minor_units": 2,
   "countries": [
     "MOROCCO",

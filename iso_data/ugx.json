@@ -1,7 +1,7 @@
 {
   "name": "Uganda Shilling",
   "code": "UGX",
-  "number": 800,
+  "number": "800",
   "minor_units": 0,
   "countries": [
     "UGANDA"

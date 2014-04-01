@@ -1,7 +1,7 @@
 {
   "name": "Somali Shilling",
   "code": "SOS",
-  "number": 706,
+  "number": "706",
   "minor_units": 2,
   "countries": [
     "SOMALIA"

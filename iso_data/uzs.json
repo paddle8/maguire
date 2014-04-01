@@ -1,7 +1,7 @@
 {
   "name": "Uzbekistan Sum",
   "code": "UZS",
-  "number": 860,
+  "number": "860",
   "minor_units": 2,
   "countries": [
     "UZBEKISTAN"

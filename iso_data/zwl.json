@@ -1,7 +1,7 @@
 {
   "name": "Zimbabwe Dollar",
   "code": "ZWL",
-  "number": 932,
+  "number": "932",
   "minor_units": 2,
   "countries": [
     "ZIMBABWE"

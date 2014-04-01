@@ -1,7 +1,7 @@
 {
   "name": "Uruguay Peso en Unidades Indexadas (URUIURUI)",
   "code": "UYI",
-  "number": 940,
+  "number": "940",
   "minor_units": 0,
   "countries": [
     "URUGUAY"

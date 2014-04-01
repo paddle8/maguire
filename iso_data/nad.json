@@ -1,7 +1,7 @@
 {
   "name": "Namibia Dollar",
   "code": "NAD",
-  "number": 516,
+  "number": "516",
   "minor_units": 2,
   "countries": [
     "NAMIBIA"

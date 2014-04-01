@@ -1,7 +1,7 @@
 {
   "name": "Turkish Lira",
   "code": "TRY",
-  "number": 949,
+  "number": "949",
   "minor_units": 2,
   "countries": [
     "TURKEY"

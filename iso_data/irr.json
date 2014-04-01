@@ -1,7 +1,7 @@
 {
   "name": "Iranian Rial",
   "code": "IRR",
-  "number": 364,
+  "number": "364",
   "minor_units": 2,
   "countries": [
     "IRAN, ISLAMIC REPUBLIC OF"

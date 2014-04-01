@@ -1,7 +1,7 @@
 {
   "name": "Peso Convertible",
   "code": "CUC",
-  "number": 931,
+  "number": "931",
   "minor_units": 2,
   "countries": [
     "CUBA"

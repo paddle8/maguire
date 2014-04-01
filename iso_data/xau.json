@@ -1,7 +1,7 @@
 {
   "name": "Gold",
   "code": "XAU",
-  "number": 959,
+  "number": "959",
   "minor_units": 0,
   "countries": [
     "ZZ08_Gold"

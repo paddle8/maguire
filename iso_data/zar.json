@@ -1,7 +1,7 @@
 {
   "name": "Rand",
   "code": "ZAR",
-  "number": 710,
+  "number": "710",
   "minor_units": 2,
   "countries": [
     "LESOTHO",

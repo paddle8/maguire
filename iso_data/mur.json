@@ -1,7 +1,7 @@
 {
   "name": "Mauritius Rupee",
   "code": "MUR",
-  "number": 480,
+  "number": "480",
   "minor_units": 2,
   "countries": [
     "MAURITIUS"
