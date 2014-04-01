@@ -1,6 +1,11 @@
 {
-  "code": "ZAR",
   "name": "Rand",
-  "symbol": "R",
-  "digits_after_decimal": 2
+  "code": "ZAR",
+  "number": 710,
+  "minor_units": 2,
+  "countries": [
+    "LESOTHO",
+    "NAMIBIA",
+    "SOUTH AFRICA"
+  ]
 }

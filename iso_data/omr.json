@@ -1,0 +1,9 @@
+{
+  "name": "Rial Omani",
+  "code": "OMR",
+  "number": 512,
+  "minor_units": 3,
+  "countries": [
+    "OMAN"
+  ]
+}

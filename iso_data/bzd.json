@@ -1,0 +1,9 @@
+{
+  "name": "Belize Dollar",
+  "code": "BZD",
+  "number": 84,
+  "minor_units": 2,
+  "countries": [
+    "BELIZE"
+  ]
+}

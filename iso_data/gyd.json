@@ -1,0 +1,9 @@
+{
+  "name": "Guyana Dollar",
+  "code": "GYD",
+  "number": 328,
+  "minor_units": 2,
+  "countries": [
+    "GUYANA"
+  ]
+}

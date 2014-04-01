@@ -1,0 +1,9 @@
+{
+  "name": "Argentine Peso",
+  "code": "ARS",
+  "number": 32,
+  "minor_units": 2,
+  "countries": [
+    "ARGENTINA"
+  ]
+}

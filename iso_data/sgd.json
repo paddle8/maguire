@@ -1,0 +1,9 @@
+{
+  "name": "Singapore Dollar",
+  "code": "SGD",
+  "number": 702,
+  "minor_units": 2,
+  "countries": [
+    "SINGAPORE"
+  ]
+}

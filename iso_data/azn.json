@@ -1,0 +1,9 @@
+{
+  "name": "Azerbaijanian Manat",
+  "code": "AZN",
+  "number": 944,
+  "minor_units": 2,
+  "countries": [
+    "AZERBAIJAN"
+  ]
+}

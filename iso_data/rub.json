@@ -1,0 +1,9 @@
+{
+  "name": "Russian Ruble",
+  "code": "RUB",
+  "number": 643,
+  "minor_units": 2,
+  "countries": [
+    "RUSSIAN FEDERATION"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Forint",
+  "code": "HUF",
+  "number": 348,
+  "minor_units": 2,
+  "countries": [
+    "HUNGARY"
+  ]
+}

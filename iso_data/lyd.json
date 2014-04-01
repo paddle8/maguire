@@ -1,0 +1,9 @@
+{
+  "name": "Libyan Dinar",
+  "code": "LYD",
+  "number": 434,
+  "minor_units": 3,
+  "countries": [
+    "LIBYA"
+  ]
+}

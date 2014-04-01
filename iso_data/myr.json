@@ -1,0 +1,9 @@
+{
+  "name": "Malaysian Ringgit",
+  "code": "MYR",
+  "number": 458,
+  "minor_units": 2,
+  "countries": [
+    "MALAYSIA"
+  ]
+}

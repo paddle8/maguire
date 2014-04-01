@@ -1,0 +1,10 @@
+{
+  "name": "Swiss Franc",
+  "code": "CHF",
+  "number": 756,
+  "minor_units": 2,
+  "countries": [
+    "LIECHTENSTEIN",
+    "SWITZERLAND"
+  ]
+}

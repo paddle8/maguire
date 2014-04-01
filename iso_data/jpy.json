@@ -1,7 +1,9 @@
 {
-  "code": "JPY",
   "name": "Yen",
-  "symbol": "¥",
-  "symbol_html": "&#165;",
-  "digits_after_decimal": 0
+  "code": "JPY",
+  "number": 392,
+  "minor_units": 0,
+  "countries": [
+    "JAPAN"
+  ]
 }

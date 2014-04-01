@@ -1,0 +1,9 @@
+{
+  "name": "Solomon Islands Dollar",
+  "code": "SBD",
+  "number": 90,
+  "minor_units": 2,
+  "countries": [
+    "SOLOMON ISLANDS"
+  ]
+}

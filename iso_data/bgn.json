@@ -1,0 +1,9 @@
+{
+  "name": "Bulgarian Lev",
+  "code": "BGN",
+  "number": 975,
+  "minor_units": 2,
+  "countries": [
+    "BULGARIA"
+  ]
+}

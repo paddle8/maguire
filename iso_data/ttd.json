@@ -1,0 +1,9 @@
+{
+  "name": "Trinidad and Tobago Dollar",
+  "code": "TTD",
+  "number": 780,
+  "minor_units": 2,
+  "countries": [
+    "TRINIDAD AND TOBAGO"
+  ]
+}

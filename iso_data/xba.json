@@ -1,0 +1,9 @@
+{
+  "name": "Bond Markets Unit European Composite Unit (EURCO)",
+  "code": "XBA",
+  "number": 955,
+  "minor_units": 0,
+  "countries": [
+    "ZZ01_Bond Markets Unit European_EURCO"
+  ]
+}

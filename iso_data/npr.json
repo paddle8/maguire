@@ -1,0 +1,9 @@
+{
+  "name": "Nepalese Rupee",
+  "code": "NPR",
+  "number": 524,
+  "minor_units": 2,
+  "countries": [
+    "NEPAL"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Colombian Peso",
+  "code": "COP",
+  "number": 170,
+  "minor_units": 2,
+  "countries": [
+    "COLOMBIA"
+  ]
+}

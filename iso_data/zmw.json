@@ -1,0 +1,9 @@
+{
+  "name": "Zambian Kwacha",
+  "code": "ZMW",
+  "number": 967,
+  "minor_units": 2,
+  "countries": [
+    "ZAMBIA"
+  ]
+}

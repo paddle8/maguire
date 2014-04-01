@@ -1,0 +1,9 @@
+{
+  "name": "Algerian Dinar",
+  "code": "DZD",
+  "number": 12,
+  "minor_units": 2,
+  "countries": [
+    "ALGERIA"
+  ]
+}

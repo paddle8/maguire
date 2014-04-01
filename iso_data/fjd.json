@@ -1,0 +1,9 @@
+{
+  "name": "Fiji Dollar",
+  "code": "FJD",
+  "number": 242,
+  "minor_units": 2,
+  "countries": [
+    "FIJI"
+  ]
+}

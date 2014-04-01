@@ -1,0 +1,9 @@
+{
+  "name": "Syrian Pound",
+  "code": "SYP",
+  "number": 760,
+  "minor_units": 2,
+  "countries": [
+    "SYRIAN ARAB REPUBLIC"
+  ]
+}

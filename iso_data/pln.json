@@ -1,0 +1,9 @@
+{
+  "name": "Zloty",
+  "code": "PLN",
+  "number": 985,
+  "minor_units": 2,
+  "countries": [
+    "POLAND"
+  ]
+}

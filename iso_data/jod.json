@@ -1,0 +1,9 @@
+{
+  "name": "Jordanian Dinar",
+  "code": "JOD",
+  "number": 400,
+  "minor_units": 3,
+  "countries": [
+    "JORDAN"
+  ]
+}

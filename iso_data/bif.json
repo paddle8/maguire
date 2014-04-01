@@ -1,0 +1,9 @@
+{
+  "name": "Burundi Franc",
+  "code": "BIF",
+  "number": 108,
+  "minor_units": 0,
+  "countries": [
+    "BURUNDI"
+  ]
+}

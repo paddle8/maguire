@@ -1,0 +1,9 @@
+{
+  "name": "Bermudian Dollar",
+  "code": "BMD",
+  "number": 60,
+  "minor_units": 2,
+  "countries": [
+    "BERMUDA"
+  ]
+}

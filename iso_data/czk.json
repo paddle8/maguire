@@ -1,0 +1,9 @@
+{
+  "name": "Czech Koruna",
+  "code": "CZK",
+  "number": 203,
+  "minor_units": 2,
+  "countries": [
+    "CZECH REPUBLIC"
+  ]
+}

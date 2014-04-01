@@ -1,0 +1,9 @@
+{
+  "name": "Philippine Peso",
+  "code": "PHP",
+  "number": 608,
+  "minor_units": 2,
+  "countries": [
+    "PHILIPPINES"
+  ]
+}

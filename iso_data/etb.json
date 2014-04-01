@@ -1,0 +1,9 @@
+{
+  "name": "Ethiopian Birr",
+  "code": "ETB",
+  "number": 230,
+  "minor_units": 2,
+  "countries": [
+    "ETHIOPIA"
+  ]
+}

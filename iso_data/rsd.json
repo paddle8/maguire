@@ -1,0 +1,9 @@
+{
+  "name": "Serbian Dinar",
+  "code": "RSD",
+  "number": 941,
+  "minor_units": 2,
+  "countries": [
+    "SERBIA"
+  ]
+}

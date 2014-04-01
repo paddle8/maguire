@@ -1,0 +1,9 @@
+{
+  "name": "Croatian Kuna",
+  "code": "HRK",
+  "number": 191,
+  "minor_units": 2,
+  "countries": [
+    "CROATIA"
+  ]
+}

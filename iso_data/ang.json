@@ -1,0 +1,10 @@
+{
+  "name": "Netherlands Antillean Guilder",
+  "code": "ANG",
+  "number": 532,
+  "minor_units": 2,
+  "countries": [
+    "CURAÇAO",
+    "SINT MAARTEN (DUTCH PART)"
+  ]
+}

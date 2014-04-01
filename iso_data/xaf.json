@@ -1,0 +1,14 @@
+{
+  "name": "CFA Franc BEAC",
+  "code": "XAF",
+  "number": 950,
+  "minor_units": 0,
+  "countries": [
+    "CAMEROON",
+    "CENTRAL AFRICAN REPUBLIC",
+    "CHAD",
+    "CONGO",
+    "EQUATORIAL GUINEA",
+    "GABON"
+  ]
+}

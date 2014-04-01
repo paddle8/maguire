@@ -1,0 +1,9 @@
+{
+  "name": "Armenian Dram",
+  "code": "AMD",
+  "number": 51,
+  "minor_units": 2,
+  "countries": [
+    "ARMENIA"
+  ]
+}

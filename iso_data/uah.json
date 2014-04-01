@@ -1,0 +1,9 @@
+{
+  "name": "Hryvnia",
+  "code": "UAH",
+  "number": 980,
+  "minor_units": 2,
+  "countries": [
+    "UKRAINE"
+  ]
+}

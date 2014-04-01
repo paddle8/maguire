@@ -1,0 +1,9 @@
+{
+  "name": "Gibraltar Pound",
+  "code": "GIP",
+  "number": 292,
+  "minor_units": 2,
+  "countries": [
+    "GIBRALTAR"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Rwanda Franc",
+  "code": "RWF",
+  "number": 646,
+  "minor_units": 0,
+  "countries": [
+    "RWANDA"
+  ]
+}

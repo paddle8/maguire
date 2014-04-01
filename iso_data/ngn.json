@@ -1,0 +1,9 @@
+{
+  "name": "Naira",
+  "code": "NGN",
+  "number": 566,
+  "minor_units": 2,
+  "countries": [
+    "NIGERIA"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Guinea Franc",
+  "code": "GNF",
+  "number": 324,
+  "minor_units": 0,
+  "countries": [
+    "GUINEA"
+  ]
+}

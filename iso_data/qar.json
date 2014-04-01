@@ -1,0 +1,9 @@
+{
+  "name": "Qatari Rial",
+  "code": "QAR",
+  "number": 634,
+  "minor_units": 2,
+  "countries": [
+    "QATAR"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Ghana Cedi",
+  "code": "GHS",
+  "number": 936,
+  "minor_units": 2,
+  "countries": [
+    "GHANA"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Bahamian Dollar",
+  "code": "BSD",
+  "number": 44,
+  "minor_units": 2,
+  "countries": [
+    "BAHAMAS"
+  ]
+}

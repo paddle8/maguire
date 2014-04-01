@@ -1,0 +1,9 @@
+{
+  "name": "Yemeni Rial",
+  "code": "YER",
+  "number": 886,
+  "minor_units": 2,
+  "countries": [
+    "YEMEN"
+  ]
+}

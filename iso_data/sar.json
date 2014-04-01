@@ -1,0 +1,9 @@
+{
+  "name": "Saudi Riyal",
+  "code": "SAR",
+  "number": 682,
+  "minor_units": 2,
+  "countries": [
+    "SAUDI ARABIA"
+  ]
+}

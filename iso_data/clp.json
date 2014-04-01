@@ -1,0 +1,9 @@
+{
+  "name": "Chilean Peso",
+  "code": "CLP",
+  "number": 152,
+  "minor_units": 0,
+  "countries": [
+    "CHILE"
+  ]
+}

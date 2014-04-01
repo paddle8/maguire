@@ -1,0 +1,9 @@
+{
+  "name": "Kenyan Shilling",
+  "code": "KES",
+  "number": 404,
+  "minor_units": 2,
+  "countries": [
+    "KENYA"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Tanzanian Shilling",
+  "code": "TZS",
+  "number": 834,
+  "minor_units": 2,
+  "countries": [
+    "TANZANIA, UNITED REPUBLIC OF"
+  ]
+}

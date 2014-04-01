@@ -1,0 +1,9 @@
+{
+  "name": "Kuwaiti Dinar",
+  "code": "KWD",
+  "number": 414,
+  "minor_units": 3,
+  "countries": [
+    "KUWAIT"
+  ]
+}

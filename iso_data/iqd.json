@@ -1,0 +1,9 @@
+{
+  "name": "Iraqi Dinar",
+  "code": "IQD",
+  "number": 368,
+  "minor_units": 3,
+  "countries": [
+    "IRAQ"
+  ]
+}

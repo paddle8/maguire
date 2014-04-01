@@ -1,0 +1,9 @@
+{
+  "name": "North Korean Won",
+  "code": "KPW",
+  "number": 408,
+  "minor_units": 2,
+  "countries": [
+    "KOREA, DEMOCRATIC PEOPLE’S REPUBLIC OF"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Baht",
+  "code": "THB",
+  "number": 764,
+  "minor_units": 2,
+  "countries": [
+    "THAILAND"
+  ]
+}

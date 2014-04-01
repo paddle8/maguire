@@ -1,0 +1,9 @@
+{
+  "name": "Brazilian Real",
+  "code": "BRL",
+  "number": 986,
+  "minor_units": 2,
+  "countries": [
+    "BRAZIL"
+  ]
+}

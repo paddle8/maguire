@@ -1,7 +1,9 @@
 {
+  "name": "Yuan Renminbi",
   "code": "CNY",
-  "name": "Yuan",
-  "symbol": "¥",
-  "symbol_html": "&#165;",
-  "digits_after_decimal": 0
+  "number": 156,
+  "minor_units": 2,
+  "countries": [
+    "CHINA"
+  ]
 }

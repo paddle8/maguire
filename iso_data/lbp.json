@@ -1,0 +1,9 @@
+{
+  "name": "Lebanese Pound",
+  "code": "LBP",
+  "number": 422,
+  "minor_units": 2,
+  "countries": [
+    "LEBANON"
+  ]
+}

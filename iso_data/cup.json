@@ -1,0 +1,9 @@
+{
+  "name": "Cuban Peso",
+  "code": "CUP",
+  "number": 192,
+  "minor_units": 2,
+  "countries": [
+    "CUBA"
+  ]
+}
