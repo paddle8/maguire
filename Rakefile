@@ -20,7 +20,7 @@ task :seed do |t|
     country_name = entry.xpath('CtryNm/text()').to_s
     currency_name = entry.xpath('CcyNm/text()').to_s
     currency_code = entry.xpath('Ccy/text()').to_s
-    currency_number = entry.xpath('CcyNbr/text()').to_s.to_i
+    currency_number = entry.xpath('CcyNbr/text()').to_s
     number_of_minor_units = entry.xpath('CcyMnrUnts/text()').to_s
 
     if number_of_minor_units.empty?
