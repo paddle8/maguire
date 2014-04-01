@@ -12,7 +12,7 @@ module Maguire
     end
 
     def precision
-      10 ** @digits_after_decimal
+      10 ** @minor_units
     end
 
     def inspect
