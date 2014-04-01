@@ -3,6 +3,8 @@
   "code": "INR",
   "number": "356",
   "minor_units": 2,
+  "symbol": "₹",
+  "symbol_html": "&#8377;",
   "countries": [
     "BHUTAN",
     "INDIA"

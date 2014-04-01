@@ -3,6 +3,8 @@
   "code": "NGN",
   "number": "566",
   "minor_units": 2,
+  "symbol": "₦",
+  "symbol_html": "&#8358",
   "countries": [
     "NIGERIA"
   ]

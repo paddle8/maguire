@@ -3,6 +3,8 @@
   "code": "THB",
   "number": "764",
   "minor_units": 2,
+  "symbol": "฿",
+  "symbol_html": "&#3647;",
   "countries": [
     "THAILAND"
   ]

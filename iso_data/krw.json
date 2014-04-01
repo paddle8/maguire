@@ -3,6 +3,8 @@
   "code": "KRW",
   "number": "410",
   "minor_units": 0,
+  "symbol": "₩",
+  "symbol_html": "&#8361;",
   "countries": [
     "KOREA, REPUBLIC OF"
   ]

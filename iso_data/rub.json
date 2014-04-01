@@ -3,6 +3,8 @@
   "code": "RUB",
   "number": "643",
   "minor_units": 2,
+  "symbol": "₽",
+  "symbol_html": "&#8381;",
   "countries": [
     "RUSSIAN FEDERATION"
   ]

@@ -3,6 +3,8 @@
   "code": "CNY",
   "number": "156",
   "minor_units": 2,
+  "symbol": "￥",
+  "symbol_html": "&#65509;",
   "countries": [
     "CHINA"
   ]

@@ -3,6 +3,8 @@
   "code": "EUR",
   "number": "978",
   "minor_units": 2,
+  "symbol": "€",
+  "symbol_html": "&euro;",
   "countries": [
     "ÅLAND ISLANDS",
     "ANDORRA",

@@ -3,6 +3,8 @@
   "code": "PKR",
   "number": "586",
   "minor_units": 2,
+  "symbol": "₨",
+  "symbol_html": "&#8360;",
   "countries": [
     "PAKISTAN"
   ]

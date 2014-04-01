@@ -3,6 +3,8 @@
   "code": "ILS",
   "number": "376",
   "minor_units": 2,
+  "symbol": "₪",
+  "symbol_html": "&#8362;",
   "countries": [
     "ISRAEL"
   ]

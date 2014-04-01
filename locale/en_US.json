@@ -1,0 +1,26 @@
+{
+  "formats": {
+    "positive": "$1,234,567,890.12",
+    "negative": "($1,234,567,890.12)"
+  },
+
+  "aud": {
+    "symbol": "A$"
+  },
+
+  "brl": {
+    "symbol": "R$"
+  },
+
+  "cad": {
+    "symbol": "C$"
+  },
+
+  "hkd": {
+    "symbol": "HK$"
+  },
+
+  "mxn": {
+    "symbol": "Mex$"
+  }
+}

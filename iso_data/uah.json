@@ -3,6 +3,8 @@
   "code": "UAH",
   "number": "980",
   "minor_units": 2,
+  "symbol": "₴",
+  "symbol_html": "&#8372;",
   "countries": [
     "UKRAINE"
   ]
