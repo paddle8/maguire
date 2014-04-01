@@ -17,31 +17,12 @@ module Maguire
     end
 
     def overlay(locale_data={})
-      Currency.new(self.class.merge_data(@data, locale_data))
+      Currency.new(Maguire::Hash.merge([@data, locale_data]))
     end
 
     class << self
-      def clear_cache!
-        @cache = {}
-      end
-
       def lookup(code)
-        return @cache[code.to_sym] if @cache && @cache[code.to_sym]
-
-        data_sets = Maguire.data_paths.map do |data_path|
-          path = data_path.join("#{code}.json")
-          if File.exists?(path)
-            JSON.parse(File.read(path), symbolize_names: true)
-          else
-            []
-          end
-        end
-
-        @cache[code.to_sym] = self.new(merge_data(data_sets))
-      end
-
-      def merge_data(data_sets)
-        data_sets.first
+        self.new(Maguire.data_paths.load(code))
       end
     end
   end

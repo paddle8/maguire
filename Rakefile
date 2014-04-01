@@ -3,7 +3,7 @@ require 'rake'
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
+  t.libs << 'lib' << 'spec'
   t.test_files = FileList['spec/**/*_spec.rb']
   t.verbose = true
 end
