@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency("nokogiri")
   s.add_development_dependency("pry")
   s.add_development_dependency("rake", "0.9.2.2")
+  s.add_development_dependency("codeclimate-test-reporter")
 end
