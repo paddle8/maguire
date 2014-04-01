@@ -3,11 +3,13 @@ require 'pry'
 
 module Maguire
   class Locale
+    class NotSupportedError < StandardError; end
+
     attr_reader :code, :symbol, :locale
 
     def initialize(locale_data={})
-      @positive_formatting = parse_formatting(locale_data[:formats][:positive])
-      @negative_formatting = parse_formatting(locale_data[:formats][:negative])
+      @positive_formatting = parse_layout(locale_data[:layouts][:positive])
+      @negative_formatting = parse_layout(locale_data[:layouts][:negative])
 
       locale_data.delete(:formats)
       @currency_overlays = locale_data
@@ -29,19 +31,42 @@ module Maguire
                      @negative_formatting
                    end
 
-      display_value = groups.join(formatting[:digit_grouping_symbol]) + formatting[:decimal_symbol] + partial.to_i.to_s.rjust(currency.minor_units, "0")
-      currency.symbol + display_value
+      formatting[:layout] % {
+        symbol: currency.symbol,
+        code: currency.code,
+        major_value: groups.join(formatting[:digit_grouping_symbol]),
+        minor_value: partial.to_i.to_s.rjust(currency.minor_units, "0")
+      }
     end
 
     private
 
-      # Currency parsing is defined using a standard format of:
-      # 1234567890.12
-      def parse_formatting(format_string)
-        @group_numbers_in_threes = true
+      # Currency layouts are defined using a standard format of:
+      # 1234567890.12 USD
+      # 1,23,45,67,890.12 USD
+      # 12,3456,7890.12 USD
+      def parse_layout(layout)
+        if layout =~ /([0-9]{2}[^0-9]){3}[0-9]{3}[^0-9]/
+          @group_numbers_in_south_asian_style = true
+          digit_grouping_symbol = layout.match(/1([^0-9]*)23/)[1]
+          layout.gsub!(["1", "23", "45", "67", "890"].join(digit_grouping_symbol), "%{major_value}")
+        elsif layout =~ /([0-9]{4}[^0-9])+/
+          @group_numbers_in_fours = true
+          digit_grouping_symbol = layout.match(/12([^0-9]*)3456/)[1]
+          layout.gsub!(["12", "3456", "7890"].join(digit_grouping_symbol), "%{major_value}")
+        elsif layout =~ /([0-9]{3}[^0-9]){3}+/
+          @group_numbers_in_threes = true
+          digit_grouping_symbol = layout.match(/1([^0-9]*)234/)[1]
+          layout.gsub!(["1", "234", "567", "890"].join(digit_grouping_symbol), "%{major_value}")
+        end
+
+        layout.gsub!("USD", "%{code}")
+        layout.gsub!("$", "%{symbol}")
+        layout.gsub!("12", "%{minor_value}")
+
         {
-          digit_grouping_symbol: ",",
-          decimal_symbol: "."
+          layout: layout,
+          digit_grouping_symbol: digit_grouping_symbol
         }
       end
 
@@ -105,7 +130,7 @@ module Maguire
           if File.exists?(path)
             JSON.parse(File.read(path), symbolize_names: true)
           else
-            []
+            raise Locale::NotSupportedError.new("The locale #{locale} isn't supported")
           end
         end
 
