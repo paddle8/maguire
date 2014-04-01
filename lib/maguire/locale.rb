@@ -87,29 +87,32 @@ module Maguire
         @group_numbers_in_south_asian_style
       end
 
-      def split_value_into_groups(value)
-        groups = []
-        value = value.to_s
-        if groups_of_three?
-          while value.length > 0
-            groups.unshift(value.slice(value.length - 3, value.length))
-            value = value.slice(0, value.length - 3)
-          end
-        elsif groups_of_four?
-          while value.length > 0
-            groups.unshift(value.slice(value.length - 4, value.length))
-            value = value.slice(0, value.length - 4)
-          end
-        elsif south_asian_grouping?
-          groups.unshift(value.slice(value.length - 3, value.length))
-          value = value.slice(0, value.length - 3)
+      def break_off(value, number)
+        [value.slice(0, value.length - number), value.slice(value.length - number, value.length)]
+      end
 
-          while value.length > 0
-            groups.unshift(value.slice(value.length - 2, value.length))
-            value = value.slice(0, value.length - 2)
-          end
+      def split_value_into_groups_of(value, number)
+        groups = []
+        while value.length > 0
+          (value, partial) = break_off(value, number)
+          groups.unshift(partial)
         end
         groups
+      end
+
+      def split_value_into_groups(value)
+        value = value.to_s
+        if groups_of_three?
+          split_value_into_groups_of(value, 3)
+        elsif groups_of_four?
+          split_value_into_groups_of(value, 4)
+        elsif south_asian_grouping?
+          (value, partial) = break_off(value, 3)
+
+          split_value_into_groups_of(value, 2) << partial
+        else
+          []
+        end
       end
 
     class << self
