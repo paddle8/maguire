@@ -40,12 +40,13 @@ module Maguire
         symbol = currency.symbol_html
       end
 
-      if options[:no_minor_units]
+      strip_insignificant_zeros = options[:strip_insignificant_zeros]
+      if options[:no_minor_units] || currency.minor_units == 0
         minor_value = 0
-        options[:strip_insignificant_zeros] = true
+        strip_insignificant_zeros = true
       end
 
-      if options[:strip_insignificant_zeros] && minor_value == 0
+      if strip_insignificant_zeros && minor_value == 0
         minor_value = ""
         decimal_symbol = ""
       else

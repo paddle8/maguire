@@ -66,4 +66,11 @@ describe "formatting a currency" do
     }, { strip_insignificant_zeros: true }).must_equal "$1"
   end
 
+  it "doesn't show the decimal symbol nor minor units when there are no minor units in the currency" do
+    Maguire.format({
+      value: 1,
+      currency: "DOGE"
+    }).must_equal "D1"
+  end
+
 end
