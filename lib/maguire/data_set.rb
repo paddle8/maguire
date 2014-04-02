@@ -4,6 +4,8 @@ module Maguire
   class DataSet
     include Enumerable
 
+    class NoDataFound < StandardError; end
+
     def initialize()
       @cache = {}
       @paths = []
@@ -39,7 +41,12 @@ module Maguire
         end
       end
 
-      @cache[id.to_sym] = merge_data(data_sets)
+      merged_data = merge_data(data_sets)
+      if merged_data.empty?
+        raise NoDataFound.new(@paths.join(':'))
+      end
+
+      @cache[id.to_sym] = merged_data
     end
 
     def merge_data(data_sets)
