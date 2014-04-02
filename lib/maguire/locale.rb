@@ -1,5 +1,4 @@
 require 'json'
-require 'pry'
 
 module Maguire
   class Locale
@@ -28,9 +27,6 @@ module Maguire
       currency = currency.overlay(overlay) if overlay
 
       groups = split_value_into_groups(major_value)
-      if groups.compact.length == 0
-        binding.pry
-      end
 
       formatting = value >= 0 ?
         @positive_formatting : @negative_formatting
