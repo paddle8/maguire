@@ -20,27 +20,23 @@ module Maguire
       "<##{self.class} locale=#{locale}>"
     end
 
-    def format(value_in_subunit, currency, options={})
-      value_in_unit = value_in_subunit / currency.precision
-      partial = value_in_subunit - value_in_unit * currency.precision
+    def format(value, currency, options={})
+      major_value = value.abs / currency.precision
+      minor_value = round(value.abs - major_value * currency.precision)
 
       overlay = @currency_overlays[currency.code.downcase.to_sym]
       currency = currency.overlay(overlay) if overlay
 
-      groups = split_value_into_groups(value_in_unit)
+      groups = split_value_into_groups(major_value)
 
-      formatting = case
-                   when value_in_subunit >= 0
-                     @positive_formatting
-                   else
-                     @negative_formatting
-                   end
+      formatting = value >= 0 ?
+        @positive_formatting : @negative_formatting
 
       formatting[:layout] % {
         symbol: currency.symbol,
         code: currency.code,
         major_value: groups.join(formatting[:digit_grouping_symbol]),
-        minor_value: partial.to_i.to_s.rjust(currency.minor_units, "0")
+        minor_value: minor_value.to_s.rjust(currency.minor_units, "0")
       }
     end
 
@@ -50,6 +46,27 @@ module Maguire
       GROUPS_OF_FOUR_RE = /([0-9]{4}[^0-9])+/
       GROUPS_OF_THREE_RE = /([0-9]{3}[^0-9]){3}+/
 
+      def parse_groups_in_south_asian_style(layout)
+        @group_numbers_in_south_asian_style = true
+        digit_grouping_symbol = layout.match(/1([^0-9]*)23/)[1]
+        layout.gsub!(["1", "23", "45", "67", "890"].join(digit_grouping_symbol), "%{major_value}")
+        digit_grouping_symbol
+      end
+
+      def parse_groups_of_four(layout)
+        @group_numbers_in_fours = true
+        digit_grouping_symbol = layout.match(/12([^0-9]*)3456/)[1]
+        layout.gsub!(["12", "3456", "7890"].join(digit_grouping_symbol), "%{major_value}")
+        digit_grouping_symbol
+      end
+
+      def parse_groups_of_three(layout)
+        @group_numbers_in_threes = true
+        digit_grouping_symbol = layout.match(/1([^0-9]*)234/)[1]
+        layout.gsub!(["1", "234", "567", "890"].join(digit_grouping_symbol), "%{major_value}")
+        digit_grouping_symbol
+      end
+
       # Currency layouts are defined using a standard format of:
       # 1234567890.12 USD
       # 1,23,45,67,890.12 USD
@@ -57,19 +74,14 @@ module Maguire
       def parse_layout(layout)
         layout = layout.dup
 
-        if layout =~ SOUTH_ASIAN_GROUPING_RE
-          @group_numbers_in_south_asian_style = true
-          digit_grouping_symbol = layout.match(/1([^0-9]*)23/)[1]
-          layout.gsub!(["1", "23", "45", "67", "890"].join(digit_grouping_symbol), "%{major_value}")
-        elsif layout =~ GROUPS_OF_FOUR_RE
-          @group_numbers_in_fours = true
-          digit_grouping_symbol = layout.match(/12([^0-9]*)3456/)[1]
-          layout.gsub!(["12", "3456", "7890"].join(digit_grouping_symbol), "%{major_value}")
-        elsif layout =~ GROUPS_OF_THREE_RE
-          @group_numbers_in_threes = true
-          digit_grouping_symbol = layout.match(/1([^0-9]*)234/)[1]
-          layout.gsub!(["1", "234", "567", "890"].join(digit_grouping_symbol), "%{major_value}")
-        end
+        digit_grouping_symbol =
+          if layout =~ SOUTH_ASIAN_GROUPING_RE
+            parse_groups_in_south_asian_style(layout)
+          elsif layout =~ GROUPS_OF_FOUR_RE
+            parse_groups_of_four(layout)
+          elsif layout =~ GROUPS_OF_THREE_RE
+            parse_groups_of_three(layout)
+          end
 
         layout.gsub!("USD", "%{code}")
         layout.gsub!("$", "%{symbol}")
@@ -82,7 +94,7 @@ module Maguire
       end
 
       def round(value)
-        value
+        value.to_i
       end
 
       def break_off(value, number)
