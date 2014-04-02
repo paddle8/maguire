@@ -21,7 +21,7 @@ module Maguire
     end
 
     class << self
-      def lookup(code)
+      def coded(code)
         self.new(Maguire.data_paths.load(code))
       end
     end
