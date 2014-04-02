@@ -37,7 +37,8 @@ module Maguire
         if File.exists?(path)
           JSON.parse(File.read(path), symbolize_names: true)
         else
-          {}
+          raise NoDataFound.new(path)
+          # {}
         end
       end
 
