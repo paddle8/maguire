@@ -1,0 +1,9 @@
+{
+  "name": "New Israeli Sheqel",
+  "code": "ILS",
+  "number": "376",
+  "minor_units": 2,
+  "countries": [
+    "ISRAEL"
+  ]
+}

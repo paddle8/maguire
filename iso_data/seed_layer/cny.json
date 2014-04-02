@@ -1,0 +1,9 @@
+{
+  "name": "Yuan Renminbi",
+  "code": "CNY",
+  "number": "156",
+  "minor_units": 2,
+  "countries": [
+    "CHINA"
+  ]
+}

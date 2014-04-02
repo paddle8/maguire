@@ -16,7 +16,7 @@ module Maguire
 
     def reset_data_paths
       data_paths.clear
-      data_paths << root_path + 'iso_data'
+      data_paths << root_path + 'iso_data/seed_layer' << root_path + 'iso_data/symbol_layer'
     end
 
     def reset_locale_paths

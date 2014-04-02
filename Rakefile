@@ -46,7 +46,7 @@ task :seed do |t|
   end
 
   currencies.each do |currency_code, data|
-    File.open("iso_data/#{currency_code.to_s.downcase}.json", 'w') do |file|
+    File.open("iso_data/seed_layer/#{currency_code.to_s.downcase}.json", 'w') do |file|
       file.write(JSON.pretty_generate(data))
     end
   end

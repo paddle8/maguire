@@ -1,0 +1,9 @@
+{
+  "name": "Pakistan Rupee",
+  "code": "PKR",
+  "number": "586",
+  "minor_units": 2,
+  "countries": [
+    "PAKISTAN"
+  ]
+}

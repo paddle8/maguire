@@ -1,0 +1,9 @@
+{
+  "name": "Sri Lanka Rupee",
+  "code": "LKR",
+  "number": "144",
+  "minor_units": 2,
+  "countries": [
+    "SRI LANKA"
+  ]
+}
