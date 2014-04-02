@@ -5,13 +5,19 @@ module Maguire
   class Locale
     class NotSupportedError < StandardError; end
 
-    attr_reader :code, :symbol, :locale
+    attr_reader :locale, :code, :symbol, :locale
 
-    def initialize(locale_data={})
+    def initialize(locale, locale_data={})
+      @locale = locale
+
       @positive_formatting = parse_layout(locale_data[:layouts][:positive])
       @negative_formatting = parse_layout(locale_data[:layouts][:negative])
 
       @currency_overlays = locale_data
+    end
+
+    def inspect
+      "<##{self.class} locale=#{locale}>"
     end
 
     def format(value_in_subunit, currency, options={})
@@ -79,18 +85,6 @@ module Maguire
         value
       end
 
-      def groups_of_three?
-        @group_numbers_in_threes
-      end
-
-      def groups_of_four?
-        @group_numbers_in_threes
-      end
-
-      def south_asian_grouping?
-        @group_numbers_in_south_asian_style
-      end
-
       def break_off(value, number)
         [value.slice(0, value.length - number), value.slice(value.length - number, value.length)]
       end
@@ -107,11 +101,11 @@ module Maguire
       def split_value_into_groups(value)
         value = value.to_s
 
-        if groups_of_three?
+        if @group_numbers_in_threes
           split_value_into_groups_of(value, 3)
-        elsif groups_of_four?
+        elsif @group_numbers_in_fours
           split_value_into_groups_of(value, 4)
-        elsif south_asian_grouping?
+        elsif @group_numbers_in_south_asian_style
           (value, partial) = break_off(value, 3)
 
           split_value_into_groups_of(value, 2) << partial
@@ -127,7 +121,7 @@ module Maguire
         if data.nil?
           raise Locale::NotSupportedError.new("The locale #{locale} isn't supported")
         else
-          self.new(data)
+          self.new(locale, data)
         end
       end
     end
