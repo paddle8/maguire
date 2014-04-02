@@ -22,7 +22,7 @@ module Maguire
 
     class << self
       def coded(code)
-        self.new(Maguire.data_paths.load(code))
+        self.new(Maguire.data_paths.load(code.downcase))
       end
     end
   end
