@@ -1,5 +1,4 @@
 require 'maguire/hash'
-require 'pry'
 
 module Maguire
   class DataSet
