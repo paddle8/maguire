@@ -28,15 +28,37 @@ module Maguire
       currency = currency.overlay(overlay) if overlay
 
       groups = split_value_into_groups(major_value)
+      if groups.compact.length == 0
+        binding.pry
+      end
 
       formatting = value >= 0 ?
         @positive_formatting : @negative_formatting
 
+      symbol = currency.symbol
+      if options[:html] && currency.symbol_html
+        symbol = currency.symbol_html
+      end
+
+      if options[:no_minor_units]
+        minor_value = 0
+        options[:strip_insignificant_zeros] = true
+      end
+
+      if options[:strip_insignificant_zeros] && minor_value == 0
+        minor_value = ""
+        decimal_symbol = ""
+      else
+        minor_value = minor_value.to_s.rjust(currency.minor_units, "0")
+        decimal_symbol = formatting[:decimal_symbol]
+      end
+
       formatting[:layout] % {
-        symbol: currency.symbol,
+        symbol: symbol,
         code: currency.code,
+        decimal: decimal_symbol,
         major_value: groups.join(formatting[:digit_grouping_symbol]),
-        minor_value: minor_value.to_s.rjust(currency.minor_units, "0")
+        minor_value: minor_value
       }
     end
 
@@ -86,9 +108,12 @@ module Maguire
         layout.gsub!("USD", "%{code}")
         layout.gsub!("$", "%{symbol}")
         layout.gsub!("12", "%{minor_value}")
+        decimal_symbol = layout.match(/major_value}(.*)%{minor_value/)[1]
+        layout.gsub!(decimal_symbol, "%{decimal}")
 
         {
           layout: layout,
+          decimal_symbol: decimal_symbol,
           digit_grouping_symbol: digit_grouping_symbol
         }
       end
@@ -98,7 +123,9 @@ module Maguire
       end
 
       def break_off(value, number)
-        [value.slice(0, value.length - number), value.slice(value.length - number, value.length)]
+        len = value.length
+        number = len if number > len
+        [value.slice(0, len - number), value.slice(len - number, len)]
       end
 
       def split_value_into_groups_of(value, number)
