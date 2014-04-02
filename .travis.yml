@@ -1,6 +1,2 @@
-rvm:
-  - 1.9.2
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
+rvm: 2.1.1
 script: CODECLIMATE_REPO_TOKEN=cc5b8598bad80efb5bf21c456c4503f6512c6da83cb9b29ae03d115716c7a5dd bundle exec rake
