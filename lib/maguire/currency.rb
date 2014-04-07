@@ -9,7 +9,7 @@ module Maguire
     end
 
     def precision
-      10 ** minor_units
+      minor_unit_to_major_unit || 10 ** minor_units
     end
 
     def inspect

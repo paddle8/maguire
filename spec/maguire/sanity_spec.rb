@@ -24,4 +24,9 @@ describe "default data sanity check" do
     en_US.instance_of?(Maguire::Locale)
   end
 
+  it "applied the patch layer" do
+    mga = Maguire::Currency.coded("MGA")
+    mga.precision.must_equal 5
+  end
+
 end
