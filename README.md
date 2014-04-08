@@ -47,13 +47,13 @@ A file for the Bitcoin currency would look like:
   "code": "BTC",
   "symbol": "฿",
   "symbol_html": "&#3647;",
-  "minor_units": 0
+  "minor_units": 8
 }
 ```
 
 After doing this, you can format your Bitcoins:
 
 ```ruby
-Maguire.format({ value: 400_000, currency: "BTC" })
+Maguire.format({ value: 400_000_00000000, currency: "BTC" })
 # ฿400,000
 ```
