@@ -57,3 +57,7 @@ After doing this, you can format your Bitcoins:
 Maguire.format({ value: 400_000_00000000, currency: "BTC" })
 # ฿400,000
 ```
+
+## Roadmap
+
+- Provide the ability to specify what it looks like for a currency to have no minor value. Some locales show "$100.-" when there is no minor value and some show "$100.00".
