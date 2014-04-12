@@ -54,10 +54,6 @@ A file for the Bitcoin currency would look like:
 After doing this, you can format your Bitcoins:
 
 ```ruby
-Maguire.format({ value: 400_000_00000000, currency: "BTC" })
+Maguire.format({ value: 400_000_00000000, currency: "BTC" }, { strip_insignificant_zeros: true })
 # ฿400,000
 ```
-
-## Roadmap
-
-- Provide the ability to specify what it looks like for a currency to have no minor value. Some locales show "$100.-" when there is no minor value and some show "$100.00".
