@@ -9,8 +9,12 @@ module Maguire
     def initialize(locale, locale_data={})
       @locale = locale
 
-      @positive_formatting = parse_layout(locale_data[:layouts][:positive])
-      @negative_formatting = parse_layout(locale_data[:layouts][:negative])
+      layouts = locale_data[:layouts]
+      @positive_formatting = parse_layout(layouts[:positive])
+      @negative_formatting = parse_layout(layouts[:negative])
+      if layouts[:zero]
+        @zero_formatting = parse_zero_layout(layouts[:zero])
+      end
 
       @currency_overlays = locale_data
     end
@@ -46,8 +50,13 @@ module Maguire
         minor_value = ""
         decimal_symbol = ""
       else
-        minor_value = minor_value.to_s.rjust(currency.minor_units, "0")
         decimal_symbol = formatting[:decimal_symbol]
+
+        if minor_value == 0 && @zero_formatting
+          formatting = @zero_formatting
+        else
+          minor_value = minor_value.to_s.rjust(currency.minor_units, "0")
+        end
       end
 
       formatting[:layout] % {
@@ -112,6 +121,22 @@ module Maguire
           layout: layout,
           decimal_symbol: decimal_symbol,
           digit_grouping_symbol: digit_grouping_symbol
+        }
+      end
+
+      def parse_zero_layout(layout)
+        layout = layout.dup
+
+        layout.gsub!("USD", "%{code}")
+        layout.gsub!("$", "%{symbol}")
+        layout.gsub!("1", "%{major_value}")
+        decimal_symbol = @positive_formatting[:decimal_symbol]
+        layout.gsub!(decimal_symbol, "%{decimal}")
+
+        {
+          layout: layout,
+          decimal_symbol: decimal_symbol,
+          digit_grouping_symbol: @positive_formatting[:digit_grouping_symbol]
         }
       end
 

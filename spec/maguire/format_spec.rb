@@ -73,4 +73,11 @@ describe "formatting a currency" do
     }).must_equal "D1"
   end
 
+  it "handles custom formatting when the minor unit is 0" do
+    Maguire.format({
+      value: 100000,
+      currency: "USD"
+    }, { locale: { lang: "en", country: "NO" } }).must_equal "$ 1.000,-"
+  end
+
 end
