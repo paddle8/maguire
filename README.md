@@ -12,7 +12,7 @@ Maguire.locale_paths << "path/to/my/locales"
 
 If you're adding a customization for French-speaking Canadians, the JSON file should be named `fr_CA.json`.
 
-The file should *at least* have a layouts hash for providing information on how to format the currencies. The layout format should always be in US Dollars (using the code `USD`, and symbol `$`) and use the monetary value of `1234567890.12`.
+The file should *at least* have a layouts hash for providing information on how to format the currencies. The layout format should always be in US Dollars (using the code `USD`, and symbol `$`) and use the monetary value of `1234567890.12`. In addition, there's an optional layout if there's a custom format when there's no minor units (cf. '$1.-"). The monetary value for the zero layout is `1.00`.
 
 So a layout for use in Quebec might be:
 
@@ -20,7 +20,7 @@ So a layout for use in Quebec might be:
 {
   "layouts": {
     "positive": "1.234.567.890,12 $",
-    "negative": "-1.234.567.890,12"
+    "negative": "-1.234.567.890,12 $"
   }
 }
 ```
