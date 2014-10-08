@@ -28,10 +28,9 @@ module Maguire
     end
 
     def format(money, options={})
-      currency = Currency.coded(money[:currency].downcase)
       locale = Locale.lookup(options[:locale] || Maguire.default_locale)
 
-      locale.format(money[:value], currency, options)
+      locale.format(money[:value], money[:currency], options)
     end
   end
 

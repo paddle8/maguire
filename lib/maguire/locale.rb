@@ -23,12 +23,22 @@ module Maguire
       "<##{self.class} locale=#{locale}>"
     end
 
-    def format(value, currency, options={})
+    def localized_currency(currency_code)
+      currency_code.downcase!
+      currency = Currency.coded(currency_code)
+      overlay = @currency_overlays[currency_code.to_sym]
+      if overlay
+        currency.overlay(overlay)
+      else
+        currency
+      end
+    end
+
+    def format(value, currency_code, options={})
+      currency = localized_currency(currency_code)
+
       major_value = value.abs / currency.precision
       minor_value = round(value.abs - major_value * currency.precision)
-
-      overlay = @currency_overlays[currency.code.downcase.to_sym]
-      currency = currency.overlay(overlay) if overlay
 
       formatting = value >= 0 ?
         @positive_formatting : @negative_formatting
