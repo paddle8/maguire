@@ -30,8 +30,6 @@ module Maguire
       overlay = @currency_overlays[currency.code.downcase.to_sym]
       currency = currency.overlay(overlay) if overlay
 
-      groups = split_value_into_groups(major_value)
-
       formatting = value >= 0 ?
         @positive_formatting : @negative_formatting
 
@@ -59,12 +57,22 @@ module Maguire
         end
       end
 
+      groups = split_value_into_groups(major_value, formatting[:digit_grouping_style])
+
       formatting[:layout] % {
         symbol: symbol,
         code: currency.code,
         decimal: decimal_symbol,
         major_value: groups.join(formatting[:digit_grouping_symbol]),
         minor_value: minor_value
+      }
+    end
+
+    def as_json
+      {
+        positive: @positive_formatting,
+        negative: @negative_formatting,
+        zero: @zero_formatting
       }
     end
 
@@ -75,21 +83,18 @@ module Maguire
       GROUPS_OF_THREE_RE = /([0-9]{3}[^0-9]){3}+/
 
       def parse_groups_in_south_asian_style(layout)
-        @group_numbers_in_south_asian_style = true
         digit_grouping_symbol = layout.match(/1([^0-9]*)23/)[1]
         layout.gsub!(["1", "23", "45", "67", "890"].join(digit_grouping_symbol), "%{major_value}")
         digit_grouping_symbol
       end
 
       def parse_groups_of_four(layout)
-        @group_numbers_in_fours = true
         digit_grouping_symbol = layout.match(/12([^0-9]*)3456/)[1]
         layout.gsub!(["12", "3456", "7890"].join(digit_grouping_symbol), "%{major_value}")
         digit_grouping_symbol
       end
 
       def parse_groups_of_three(layout)
-        @group_numbers_in_threes = true
         digit_grouping_symbol = layout.match(/1([^0-9]*)234/)[1]
         layout.gsub!(["1", "234", "567", "890"].join(digit_grouping_symbol), "%{major_value}")
         digit_grouping_symbol
@@ -104,10 +109,13 @@ module Maguire
 
         digit_grouping_symbol =
           if layout =~ SOUTH_ASIAN_GROUPING_RE
+            digit_grouping_style = 'south_asian'
             parse_groups_in_south_asian_style(layout)
           elsif layout =~ GROUPS_OF_FOUR_RE
+            digit_grouping_style = 'quadruples'
             parse_groups_of_four(layout)
           elsif layout =~ GROUPS_OF_THREE_RE
+            digit_grouping_style = 'triples'
             parse_groups_of_three(layout)
           end
 
@@ -120,7 +128,8 @@ module Maguire
         {
           layout: layout,
           decimal_symbol: decimal_symbol,
-          digit_grouping_symbol: digit_grouping_symbol
+          digit_grouping_symbol: digit_grouping_symbol,
+          digit_grouping_style: digit_grouping_style
         }
       end
 
@@ -136,7 +145,8 @@ module Maguire
         {
           layout: layout,
           decimal_symbol: decimal_symbol,
-          digit_grouping_symbol: @positive_formatting[:digit_grouping_symbol]
+          digit_grouping_symbol: @positive_formatting[:digit_grouping_symbol],
+          digit_grouping_style: @positive_formatting[:digit_grouping_style]
         }
       end
 
@@ -159,14 +169,15 @@ module Maguire
         groups
       end
 
-      def split_value_into_groups(value)
+      def split_value_into_groups(value, style)
         value = value.to_s
 
-        if @group_numbers_in_threes
+        case(style)
+        when 'triples'
           split_value_into_groups_of(value, 3)
-        elsif @group_numbers_in_fours
+        when 'quadruples'
           split_value_into_groups_of(value, 4)
-        elsif @group_numbers_in_south_asian_style
+        when 'south_asian'
           (value, partial) = break_off(value, 3)
 
           split_value_into_groups_of(value, 2) << partial

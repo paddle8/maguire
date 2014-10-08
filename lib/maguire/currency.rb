@@ -20,6 +20,17 @@ module Maguire
       Currency.new(Maguire::Hash.merge([@data, locale_data]))
     end
 
+    def as_json
+      {
+        name: name,
+        code: code,
+        minor_units: minor_units,
+        precision: precision,
+        symbol: symbol,
+        symbol_html: symbol_html
+      }
+    end
+
     class << self
       def coded(code)
         self.new(Maguire.data_paths.load(code.downcase))

@@ -12,4 +12,16 @@ describe Maguire::Currency do
     currency.name.must_equal "Euro"
     currency.precision.must_equal 100
   end
+
+  it "is serializeable as JSON" do
+    currency = Maguire::Currency.coded("USD")
+    json = currency.as_json
+    json.delete(:name).must_equal "US Dollar"
+    json.delete(:code).must_equal "USD"
+    json.delete(:minor_units).must_equal 2
+    json.delete(:precision).must_equal 100
+    json.delete(:symbol).must_equal '$'
+    json.delete(:symbol_html).must_equal nil
+    json.must_be_empty
+  end
 end
