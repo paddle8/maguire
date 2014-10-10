@@ -54,6 +54,10 @@ module Maguire
         strip_insignificant_zeros = true
       end
 
+      if major_value == 0 && minor_value == 0 && options[:free]
+        return options[:free]
+      end
+
       if strip_insignificant_zeros && minor_value == 0
         minor_value = ""
         decimal_symbol = ""

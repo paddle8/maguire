@@ -80,4 +80,21 @@ describe "formatting a currency" do
     }, { locale: { lang: "en", country: "NO" } }).must_equal "$ 1.000,-"
   end
 
+  it "returns the :free option if the major_value and minor_value are 0" do
+    Maguire.format({
+      value: 0,
+      currency: "USD"
+    }, { free: "Free" }).must_equal "Free"
+
+    Maguire.format({
+      value: 10,
+      currency: "USD"
+    }, { free: "Free", no_minor_units: true }).must_equal "Free"
+
+    Maguire.format({
+      value: 10,
+      currency: "DOGE"
+    }, { free: "Much free" }).must_equal "D10"
+  end
+
 end
