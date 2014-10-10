@@ -80,6 +80,7 @@ module Maguire
 
     def as_json
       {
+        id: @locale,
         positive: @positive_formatting,
         negative: @negative_formatting,
         zero: @zero_formatting
@@ -198,7 +199,7 @@ module Maguire
 
     class << self
       def lookup(options)
-        locale = "#{options[:lang].downcase}_#{options[:country].upcase}"
+        locale = "#{options[:lang].downcase}-#{options[:country].upcase}"
         data = Maguire.locale_paths.load(locale)
         if data.nil?
           raise Locale::NotSupportedError.new("The locale #{locale} isn't supported")

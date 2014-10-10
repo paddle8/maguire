@@ -4,13 +4,14 @@ require 'spec_helper'
 describe Maguire::Locale do
   it "loads a locale from the specified locale directory" do
     locale = Maguire::Locale.lookup({ lang: "en", country: "US" })
-    locale.locale.must_equal "en_US"
+    locale.locale.must_equal "en-US"
   end
 
   it "is serializeable as JSON" do
     locale = Maguire::Locale.lookup({ lang: "en", country: "US" })
     json = locale.as_json
 
+    json.delete(:id).must_equal "en-US"
     positive_formatting = json.delete(:positive)
     positive_formatting.delete(:layout).must_equal "%{symbol}%{major_value}%{decimal}%{minor_value}"
     positive_formatting.delete(:decimal_symbol).must_equal "."
