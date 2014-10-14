@@ -16,11 +16,23 @@
     "symbol": "C$"
   },
 
+  "cny": {
+    "symbol": "CN¥"
+  },
+
   "hkd": {
     "symbol": "HK$"
   },
 
   "mxn": {
-    "symbol": "Mex$"
+    "symbol": "MX$"
+  },
+
+  "nzd": {
+    "symbol": "NZ$"
+  },
+
+  "twd": {
+    "symbol": "NT$"
   }
 }
