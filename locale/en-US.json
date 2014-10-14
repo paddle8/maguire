@@ -17,7 +17,8 @@
   },
 
   "cny": {
-    "symbol": "CN¥"
+    "symbol": "CN¥",
+    "symbol_html": "CN&#65509;"
   },
 
   "hkd": {
